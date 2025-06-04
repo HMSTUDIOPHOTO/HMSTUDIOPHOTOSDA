@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Studio Foto</title>
+  <link href="style.css" rel="stylesheet">
+  <script type="module" src="script.js" defer></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navigasi -->
+  <nav class="bg-white shadow mb-6 fade-in">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between">
+      <h1 class="text-2xl font-bold">Studio Foto</h1>
+      <div class="space-x-4">
+        <a href="#galeri" class="text-blue-600 hover:underline">Galeri</a>
+        <a href="#preview" class="text-blue-600 hover:underline">Preview</a>
+        <a href="#booking" class="text-blue-600 hover:underline">Booking</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Galeri Foto -->
+  <section id="galeri" class="py-10 max-w-6xl mx-auto px-4 fade-in">
+    <h2 class="text-3xl font-bold text-center mb-8">Galeri Foto</h2>
+    <div id="galeriFoto" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <img src="img/foto1.jpg" alt="foto1" class="rounded shadow-md hover-zoom" />
+      <img src="img/foto2.jpg" alt="foto2" class="rounded shadow-md hover-zoom" />
+    </div>
+  </section>
+
+  <!-- Preview Foto -->
+  <section id="preview" class="py-10 max-w-6xl mx-auto px-4 fade-in">
+    <h2 class="text-3xl font-bold text-center mb-8">Preview & Upload Foto</h2>
+    <div class="text-center mb-4">
+      <input type="file" id="uploadInput" multiple accept="image/*" class="mb-4" />
+    </div>
+    <div id="previewFoto" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
+  </section>
+
+  <!-- Booking Form -->
+  <section id="booking" class="py-10 max-w-2xl mx-auto px-4 fade-in">
+    <h2 class="text-3xl font-bold text-center mb-8">Form Booking</h2>
+    <form id="bookingForm" class="space-y-4 bg-white p-6 rounded shadow">
+      <input type="text" name="nama" placeholder="Nama Lengkap" required class="w-full border p-2 rounded" />
+      <input type="email" name="email" placeholder="Email" required class="w-full border p-2 rounded" />
+      <input type="date" name="tanggal" required class="w-full border p-2 rounded" />
+      <select name="jenis" required class="w-full border p-2 rounded">
+        <option value="">Pilih Jenis Sesi</option>
+        <option value="Keluarga">Foto Keluarga</option>
+        <option value="Graduation">Foto Wisuda</option>
+        <option value="Produk">Foto Produk</option>
+        <option value="Lainnya">Lainnya</option>
+      </select>
+      <textarea name="catatan" placeholder="Catatan tambahan" class="w-full border p-2 rounded"></textarea>
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover-zoom">Kirim Booking</button>
+    </form>
+    <div id="success" class="text-green-600 mt-4 text-center hidden">Booking berhasil dikirim!</div>
+  </section>
+
+</body>
+</html>
